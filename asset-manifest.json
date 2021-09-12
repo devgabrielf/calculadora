@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/calculadora/static/css/main.a767d62e.chunk.css",
+    "main.css": "/calculadora/static/css/main.6f36e212.chunk.css",
     "main.js": "/calculadora/static/js/main.d62c5d70.chunk.js",
     "main.js.map": "/calculadora/static/js/main.d62c5d70.chunk.js.map",
     "runtime-main.js": "/calculadora/static/js/runtime-main.ade32c07.js",
@@ -8,14 +8,14 @@
     "static/js/2.eb1d4e6f.chunk.js": "/calculadora/static/js/2.eb1d4e6f.chunk.js",
     "static/js/2.eb1d4e6f.chunk.js.map": "/calculadora/static/js/2.eb1d4e6f.chunk.js.map",
     "index.html": "/calculadora/index.html",
-    "static/css/main.a767d62e.chunk.css.map": "/calculadora/static/css/main.a767d62e.chunk.css.map",
+    "static/css/main.6f36e212.chunk.css.map": "/calculadora/static/css/main.6f36e212.chunk.css.map",
     "static/js/2.eb1d4e6f.chunk.js.LICENSE.txt": "/calculadora/static/js/2.eb1d4e6f.chunk.js.LICENSE.txt",
     "static/media/index.css": "/calculadora/static/media/RobotoMono-Thin.30914900.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.ade32c07.js",
     "static/js/2.eb1d4e6f.chunk.js",
-    "static/css/main.a767d62e.chunk.css",
+    "static/css/main.6f36e212.chunk.css",
     "static/js/main.d62c5d70.chunk.js"
   ]
 }
