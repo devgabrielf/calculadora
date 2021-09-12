@@ -7,6 +7,11 @@
   font-family: 'RobotoMono', monospace;
 }
 
+html, body {
+  margin: 0;
+  overflow-y: hidden;
+}
+
 body {
   display: flex;
   height: 100vh;
