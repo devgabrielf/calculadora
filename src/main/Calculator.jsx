@@ -58,6 +58,10 @@ state = { ...initialState }
                     break
                 default:
             }
+
+            if (isNaN(values[0])) values[0] = "Indeterminado"
+            if (values[0] === Infinity) values[0] = "Indefinido"
+ 
             values[1] = null
 
             if (values[0].toString().length > 15) {
