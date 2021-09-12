@@ -21,7 +21,7 @@
 }
 
 .button.operation {
-    background-color: #fa8231;
+    background-color: #3c659b;
     color: #fff;
     border-right: solid 1px rgb(71, 71, 71);
 }
@@ -36,5 +36,5 @@
 }
 
 .button.operation:active {
-    background-color: #c96522;
+    background-color: #1e4374;
 }

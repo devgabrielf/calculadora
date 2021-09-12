@@ -93,7 +93,7 @@ state = { ...initialState }
 
     addDigit(n) {
         if (this.state.displayValue.length < 15 || this.state.clearDisplay) {
-            if (n === ',' && this.state.displayValue.includes(',')) {
+            if (n === ',' && this.state.displayValue.includes(',') && !this.state.clearDisplay) {
                 return
             }
 
@@ -105,12 +105,16 @@ state = { ...initialState }
             if (n !== ',') {
                 currentValue = clearDisplay ? '' : this.state.displayValue
                 displayValue = currentValue + n
-                const i = this.state.current
-                const newValue = parseFloat(displayValue.replace(',', '.'))
-                const values = [...this.state.values]
-                values[i] = newValue
-                this.setState({ values })
+            } else {
+                currentValue = clearDisplay ? '0' : this.state.displayValue
+                displayValue = currentValue + n
             }
+
+            const i = this.state.current
+            const newValue = parseFloat(displayValue.replace(',', '.'))
+            const values = [...this.state.values]
+            values[i] = newValue
+            this.setState({ values })
 
             if (displayValue.length > 10) {
                 this.setState({ fontSize: "small" })
@@ -121,7 +125,7 @@ state = { ...initialState }
 
     changeSign() {
         let displayValue = ''
-        if (this.state.displayValue[0] !== '0') {
+        if (this.state.displayValue[0] !== '0' && !this.state.clearDisplay) {
             if (this.state.displayValue[0] !== '-') {
                 displayValue = '-' + this.state.displayValue
                 const i = this.state.current
