@@ -35,10 +35,9 @@ state = { ...initialState }
             this.setState({ displayVisibility: 0, operation, current: 1, clearDisplay: true })
             setTimeout(() => this.setState({ displayVisibility: 1 }), 50)
         } else if(operation !== "=" || this.state.operation === "=" || this.state.values[1] !== null) {
-            console.log('to aqui')
             const equals = operation === '='
             const currentOperation = this.state.operation
-
+            
             const values = [...this.state.values]
             switch (currentOperation) {
                 case '+':
@@ -60,10 +59,13 @@ state = { ...initialState }
             }
 
             if (isNaN(values[0])) values[0] = "Indeterminado"
-            if (values[0] === Infinity) values[0] = "Indefinido"
+            else if (values[0] === Infinity) values[0] = "Indefinido"
  
             values[1] = null
 
+            while (values[0].toString().length > 15 && values[0].toString().indexOf('.') !== -1) {
+                values[0] = parseFloat(values[0].toFixed(values[0].toString().split('.')[1].length-1))
+            }
             if (values[0].toString().length > 15) {
                 this.setState({
                     displayValue: "limite excedido",
@@ -88,6 +90,7 @@ state = { ...initialState }
                     values
                 })
             }
+            
         }
     }
 
