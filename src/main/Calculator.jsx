@@ -135,7 +135,7 @@ state = { ...initialState }
 
     changeSign() {
         let displayValue = ''
-        if (this.state.displayValue[0] !== '0' && !this.state.clearDisplay) {
+        if (parseFloat(this.state.displayValue.replace(',', '.')) !== 0 && !this.state.clearDisplay) {
             if (this.state.displayValue[0] !== '-') {
                 displayValue = '-' + this.state.displayValue
                 const i = this.state.current
