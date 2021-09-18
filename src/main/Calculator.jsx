@@ -58,15 +58,23 @@ state = { ...initialState }
                 default:
             }
 
-            if (isNaN(values[0])) values[0] = "Indeterminado"
-            else if (values[0] === Infinity) values[0] = "Indefinido"
- 
+            
             values[1] = null
-
+            
             while (values[0].toString().length > 15 && values[0].toString().indexOf('.') !== -1) {
                 values[0] = parseFloat(values[0].toFixed(values[0].toString().split('.')[1].length-1))
             }
-            if (values[0].toString().length > 15) {
+            
+            if (isNaN(values[0]) || values[0] === Infinity) {
+                this.setState({
+                    displayValue: "indefinido",
+                    operation: null,
+                    current: 0,
+                    clearDisplay: true,
+                    values: [0, null],
+                    fontSize: "big"
+                })
+            } else if (values[0].toString().length > 15) {
                 this.setState({
                     displayValue: "limite excedido",
                     operation: null,
@@ -81,7 +89,6 @@ state = { ...initialState }
                 } else {
                     this.setState({ fontSize: "big" })
                 }
-
                 this.setState({
                     displayValue: values[0].toString().replace('.', ','),
                     operation: equals ? null : operation,
